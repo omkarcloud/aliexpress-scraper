@@ -1,4 +1,4 @@
-![AliExpress Scraper Featured Image](https://raw.githubusercontent.com/omkarcloud/aliexpress/master/aliexpress-scraper-featured-image.png)
+![AliExpress Scraper Featured Image](https://raw.githubusercontent.com/omkarcloud/aliexpress-scraper/master/aliexpress-scraper-featured-image.png)
 
 # AliExpress Scraper API
 

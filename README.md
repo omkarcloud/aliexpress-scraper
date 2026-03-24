@@ -1,4 +1,4 @@
-![AliExpress Scraper Featured Image](https://raw.githubusercontent.com/omkarcloud/aliexpress-scraper/master/aliexpress-scraper-featured-image.png)
+![AliExpress Scraper Featured Image](https://raw.githubusercontent.com/omkarcloud/aliexpress/master/aliexpress-scraper-featured-image.png)
 
 # AliExpress Scraper API
 
@@ -39,7 +39,7 @@ This is a well built product, and your search for the best AliExpress Scraper AP
 ## Quick Start
 
 ```bash
-curl -X GET "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/search?query=wireless%20earbuds" \
+curl -X GET "https://aliexpress-scraper-api.omkar.cloud/aliexpress/search?query=wireless%20earbuds" \
   -H "API-Key: YOUR_API_KEY"
 ```
 
@@ -74,7 +74,7 @@ import requests
 
 # Search for products
 response = requests.get(
-    "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/search",
+    "https://aliexpress-scraper-api.omkar.cloud/aliexpress/search",
     params={"query": "wireless earbuds"},
     headers={"API-Key": "YOUR_API_KEY"}
 )
@@ -88,7 +88,7 @@ print(response.json())
 ### Product Search
 
 ```
-GET https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/search
+GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/search
 ```
 
 #### Parameters
@@ -104,7 +104,7 @@ GET https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/search
 import requests
 
 response = requests.get(
-    "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/search",
+    "https://aliexpress-scraper-api.omkar.cloud/aliexpress/search",
     params={"query": "wireless earbuds"},
     headers={"API-Key": "YOUR_API_KEY"}
 )
@@ -123,7 +123,7 @@ print(response.json())
   "per_page": 20,
   "current_page": 1,
   "total_pages": 2005,
-  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/search?query=wireless+earbuds&page=2",
+  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress/search?query=wireless+earbuds&page=2",
   "previous": null,
   "results": [
     {
@@ -163,7 +163,7 @@ print(response.json())
 ### Product Details
 
 ```
-GET https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/product
+GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/product
 ```
 
 #### Parameters
@@ -178,7 +178,7 @@ GET https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/product
 import requests
 
 response = requests.get(
-    "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/product",
+    "https://aliexpress-scraper-api.omkar.cloud/aliexpress/product",
     params={"product_id": "1005007170995524"},
     headers={"API-Key": "YOUR_API_KEY"}
 )
@@ -266,7 +266,7 @@ Returns product title, category, listing URL, all images (standard + HD), video 
 
 ```python
 response = requests.get(
-    "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/search",
+    "https://aliexpress-scraper-api.omkar.cloud/aliexpress/search",
     params={"query": "wireless earbuds"},
     headers={"API-Key": "YOUR_API_KEY"}
 )

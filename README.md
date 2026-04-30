@@ -2,14 +2,14 @@
 
 # AliExpress Scraper API
 
-Search products, get variant-level pricing, HD images, seller info, and stock quantities from AliExpress — one API call, clean JSON. 5,000 free requests/month.
+Search products, get variant-level pricing, HD images, seller info, and stock quantities from AliExpress — one API call, clean JSON. 100 free requests/month.
 
 ## Key Features
 
 - Search AliExpress products by keyword
 - Get full product details — pricing per variant, HD images, seller info, package dimensions
 - Paginated search with 40K+ results per query
-- **5,000 requests/month on free tier**
+- **100 requests/month on free tier**
 - Example Response:
 ```json
 {
@@ -31,7 +31,7 @@ Search products, get variant-level pricing, HD images, seller info, and stock qu
 
 Create an account at [omkar.cloud](https://www.omkar.cloud/auth/sign-up?redirect=/api-key) to get your API key.
 
-It takes just 2 minutes to sign up. You get 5,000 free requests every month for detailed AliExpress data — more than enough for most users to get their job done without paying a dime.
+It takes just 2 minutes to sign up. You get 100 free requests every month for detailed AliExpress data.
 
 This is a well built product, and your search for the best AliExpress Scraper API ends right here.
 
@@ -319,10 +319,10 @@ Yes. Pass the `page` parameter to paginate through results. The response include
 
 | Plan | Price | Requests/Month |
 |------|-------|----------------|
-| Free | $0 | 5,000 |
-| Starter | $25 | 100,000 |
-| Grow | $75 | 1,000,000 |
-| Scale | $150 | 10,000,000 |
+| Free | $0 | 100 |
+| Starter | $16 | 3,000 |
+| Grow | $48 | 15,000 |
+| Scale | $148 | 75,000 |
 
 ## Questions? We have answers.
 

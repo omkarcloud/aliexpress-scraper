@@ -1,5 +1,3 @@
-![AliExpress Scraper Featured Image](https://raw.githubusercontent.com/omkarcloud/aliexpress-scraper/master/aliexpress-scraper-featured-image.png)
-
 # AliExpress Scraper API
 
 Search products, get variant-level pricing, HD images, seller info, and stock quantities from AliExpress — one API call, clean JSON. 100 free requests/month.

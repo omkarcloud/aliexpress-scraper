@@ -27,6 +27,12 @@ Search products, get variant-level pricing, HD images, seller info, and stock qu
 }
 ```
 
+## ▶️ Video Tutorial
+
+Watch the complete API walkthrough:
+
+[![AliExpress Scraper API Walkthrough](https://raw.githubusercontent.com/omkarcloud/aliexpress-scraper/master/aliexpress-scraper-youtube-video-preview.png)](https://www.youtube.com/watch?v=Dt6iyv3ZZKg)
+
 ## Get API Key
 
 Create an account at [omkar.cloud](https://www.omkar.cloud/auth/sign-up?redirect=/api-key) to get your API key.

@@ -1,5 +1,3 @@
-![AliExpress Scraper Featured Image](https://raw.githubusercontent.com/omkarcloud/aliexpress-scraper/master/aliexpress-scraper-featured-image.png)
-
 # AliExpress Scraper API
 
 Search products, get variant-level pricing, HD images, seller info, and stock quantities from AliExpress — one API call, clean JSON. 100 free requests/month.
@@ -26,6 +24,12 @@ Search products, get variant-level pricing, HD images, seller info, and stock qu
   "category_ids": "44,100000306,63705"
 }
 ```
+
+## ▶️ Video Tutorial
+
+Watch the complete API walkthrough:
+
+[![AliExpress Scraper API Walkthrough](https://raw.githubusercontent.com/omkarcloud/aliexpress-scraper/master/aliexpress-scraper-youtube-video-preview.png)](https://www.youtube.com/watch?v=Dt6iyv3ZZKg)
 
 ## Get API Key
 

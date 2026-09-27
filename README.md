@@ -34,7 +34,7 @@ It works across **64 ship-to countries** via `country_code` — results are loca
 
 The same scraper is also available on **Apify** and **RapidAPI**:
 
-[![Run on Apify](https://img.shields.io/badge/Run%20on-Apify-blue)](https://apify.com/omkar-cloud/aliexpress-scraper) [![Run on RapidAPI](https://img.shields.io/badge/Run%20on-RapidAPI-blue?logo=rapidapi)](https://rapidapi.com/Chetan11dev/api/aliexpress-scraper-api1)
+[![Run on Apify](https://img.shields.io/badge/Run%20on-Apify-blue)](https://apify.com/omkar-cloud/aliexpress-scraper) [![Run on RapidAPI](https://img.shields.io/badge/Run%20on-RapidAPI-blue?logo=rapidapi)](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1)
 
 ## Example: AliExpress Product Data in One Request
 

@@ -129,53 +129,54 @@ Real-time AliExpress product search with sorting and filters. Returns 60 product
 
 ```json
 {
-  "count": 932,
+  "count": 10188,
   "per_page": 60,
-  "current_page": 2,
-  "total_pages": 16,
-  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/v2/search?query=wireless%2520earbuds&page=3&sort_by=price_low_to_high&country_code=DE",
-  "previous": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/v2/search?query=wireless%2520earbuds&sort_by=price_low_to_high&country_code=DE",
-  "currency": "EUR",
+  "current_page": 1,
+  "total_pages": 170,
+  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/v2/search?query=rubber+duck&page=2",
+  "previous": null,
+  "currency": "USD",
   "results": [
     {
-      "id": "1005013054478555",
-      "title": "F26E01 Wireless Bluetooth In-Ear Earbuds: Clear Sound, Built-In Mic, Premium Materials, Long Battery Life - Ideal for Travel, Office, and Gaming",
-      "link": "https://www.aliexpress.us/item/1005013054478555.html",
-      "image": "https://ae-pic-a1.aliexpress-media.com/kf/Sd009f21dc43f40d6a370aedd0693f969l.jpg",
+      "id": "3256810554614749",
+      "title": "Joyfy Rubber Ducks Random Assortment Mini Rubber Duckie Toys for Kids Bath Shower Toys Birthday Gifts Summer Beach Pool Activity",
+      "link": "https://www.aliexpress.us/item/3256810554614749.html",
+      "image": "https://ae-pic-a1.aliexpress-media.com/kf/Sf1ea8500f8bb4e37b31702f533e083a8v.jpg",
       "images": [
-        "https://ae-pic-a1.aliexpress-media.com/kf/Sd009f21dc43f40d6a370aedd0693f969l.jpg",
-        "https://ae-pic-a1.aliexpress-media.com/kf/Sb047726f813846eaaa2cbae42e804272u.jpg",
-        "https://ae-pic-a1.aliexpress-media.com/kf/Sc721a461275c4a20aeb667004b7393acx.jpg",
-        "https://ae-pic-a1.aliexpress-media.com/kf/Sa3012150e30e4e29838942c1170bae6bV.jpg",
-        "https://ae-pic-a1.aliexpress-media.com/kf/S8b9c3d0f88e644b4bcb255c720aec4033.jpg",
-        "https://ae-pic-a1.aliexpress-media.com/kf/S517b931e269c495fb704bf6abc4b52b9v.jpg",
-        "https://ae-pic-a1.aliexpress-media.com/kf/S2f04582a156b434182ba0e49e97b6ec1W.jpg",
-        "https://ae-pic-a1.aliexpress-media.com/kf/S8c716e4468644c088df453af67976fb1z.jpg"
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sf1ea8500f8bb4e37b31702f533e083a8v.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S3f715f2a467142728261a755015531703.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Scb9da701446e4e9e94e073855144f63bT.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S35cdd5e9f0cc4420b047d3fb42cde035B.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S1c8d53453e1d4a6c9fa6f54a31bf41d2T.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/See10b68ebd3542e2a8a449bb78e693b4i.jpg"
       ],
-      "rating": 4.0,
-      "orders_count": 6,
+      "rating": 4.9,
+      "orders_count": 700,
       "is_hot_sale": null,
       "is_choice": false,
       "pricing": {
-        "sale_price": 15.39,
-        "original_price": null,
-        "discount_percent": 25,
-        "currency": "EUR",
-        "tax_rate": 0.19,
-        "sku_id": "12000060162104149"
+        "sale_price": 3.54,
+        "original_price": 19.06,
+        "discount_percent": 81,
+        "currency": "USD",
+        "tax_rate": 0.0,
+        "sku_id": "12000055944024788"
       },
-      "tags": [],
+      "tags": [
+        "New shoppers save $15.52",
+        "Lowest price in 90 days"
+      ],
       "store_name": null,
       "category_ids": [
-        44,
-        100000306,
-        63705
+        26,
+        200389159,
+        100001766
       ],
-      "listed_date": "2026-08-27"
+      "listed_date": "2026-01-07"
     }
   ]
 }
-````
+`````
 
 </details>
 
@@ -357,11 +358,11 @@ Every customer review of a product, 20 per page with `next`/`previous` links, pl
 
 ```json
 {
-  "count": 291,
+  "count": 1099,
   "per_page": 20,
   "current_page": 1,
-  "total_pages": 15,
-  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/v2/reviews?product=1005008320757869&filter=image&country_code=US&page=2",
+  "total_pages": 55,
+  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/v2/reviews?product=1005008320757869&filter=all&page=2",
   "previous": null,
   "statistics": {
     "average_rating": 4.8,
@@ -422,7 +423,7 @@ Every customer review of a product, 20 per page with `next`/`previous` links, pl
     }
   ]
 }
-```
+````
 
 </details>
 
@@ -453,7 +454,7 @@ The product's customer Q&A, 20 per page: each question with the asker, date, num
   "per_page": 20,
   "current_page": 1,
   "total_pages": 4,
-  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/v2/questions?product=3256804853498073&country_code=US&page=2",
+  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/v2/questions?product=3256804853498073&page=2",
   "previous": null,
   "total_answers": 31,
   "results": [
@@ -480,7 +481,7 @@ The product's customer Q&A, 20 per page: each question with the asker, date, num
     }
   ]
 }
-```
+````
 
 </details>
 

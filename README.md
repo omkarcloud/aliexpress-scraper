@@ -3,7 +3,7 @@
 </p>
 <div align="center" style="margin-top: 0;">
   <h1>✨ AliExpress Scraper 🤖</h1>
-  <p><strong>Scrape AliExpress product search, prices, SKU variants, ratings, orders, and shipping in real time — across 64 ship-to countries. Clean JSON, no blocks, no proxies.</strong></p>
+  <p><strong>Scrape AliExpress product search, full product details, prices, SKU variants, customer reviews and Q&amp;A in real time — across 64 ship-to countries. Clean JSON, no blocks, no proxies.</strong></p>
 </div>
 <em>
   <h5 align="center">(Programming Language - Python 3)</h5>
@@ -20,17 +20,17 @@
   <img src="https://views.whatilearened.today/views/github/omkarcloud/aliexpress-scraper.svg" width="80px" height="28px" alt="View" />
 </p>
 
-AliExpress Scraper turns AliExpress into clean JSON, pulled live from the site — no blocks, no proxies to manage. Search products with sorting and filters, and pull full product details — every SKU variant with its own price and stock, images, specifications, shipping estimates, and store info — all via one API.
+AliExpress Scraper turns AliExpress into clean JSON, pulled live from the site — no blocks, no proxies to manage. Pull full product details — every SKU variant with its own price and stock, images, video, specifications, shipping estimates, and store info — search products with sorting and filters, and page through every customer review and every customer question with its answer — all via one API.
 
 Prices come back numeric with the discount (and per-SKU pricing on product pages), so you can compare, monitor, and analyze prices programmatically instead of scraping HTML yourself.
 
-It works across **64 ship-to countries** via `country_code` — results are localized and **prices come back in each country's own currency automatically** (US requests are served from aliexpress.us, all other countries from aliexpress.com).
+It works across **64 ship-to countries** via `country_code` — results are localized and **prices come back in each country's own currency automatically**.
 
-- **Rated Excellent — 4.6 based on 25 reviews** on [Trustpilot](https://www.trustpilot.com/review/omkar.cloud). Our open source work is sponsored by [1000+ devs on GitHub](https://github.com/sponsors/omkarcloud).
+- **Rated Excellent — 4.7 based on 37 reviews** on [Trustpilot](https://www.trustpilot.com/review/omkar.cloud). Our open source work is sponsored by [1000+ devs on GitHub](https://github.com/sponsors/omkarcloud).
 
 [![Try the AliExpress Scraper API in the live playground — free, no signup](https://img.shields.io/badge/%E2%96%B6%20Playground-Run%20a%20live%20request%2C%20free-brightgreen?style=for-the-badge)](https://www.omkar.cloud/tools/aliexpress-scraper-api/playground?utm_source=github&utm_medium=cpc&utm_content=badge)
 
-[![Free Plan: 200 requests per month](https://img.shields.io/badge/Free%20tier-200%20requests%2Fmonth-blue?style=for-the-badge)](#pricing)
+[![Free Plan: 100 requests per month](https://img.shields.io/badge/Free%20tier-100%20requests%2Fmonth-blue?style=for-the-badge)](#pricing)
 
 The same scraper is also available on **Apify** and **RapidAPI**:
 
@@ -38,71 +38,40 @@ The same scraper is also available on **Apify** and **RapidAPI**:
 
 ## Example: AliExpress Product Data in One Request
 
-One request to the product details API:
+One request to the product details API — here for a best-selling necklace:
 
 ```
-GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/product?product=3256810554614749
+GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/product?product=3256809570114841
 ```
 
 ```json
 {
-  "id": "3256810554614749",
-  "canonical_id": "3256810554614749",
-  "title": "Joyfy Rubber Ducks Random Assortment Mini Rubber Duckie Toys for Kids Bath Shower Toys Birthday Gifts Summer Beach Pool Activity",
-  "link": "https://www.aliexpress.com/item/3256810554614749.html",
-  "rating": 4.9,
-  "reviews_count": 56,
-  "orders_count": 474,
-  "wishlist_count": 116,
-  "stock": 492,
-  "pricing": {
-    "sale_price": 0.99,
-    "original_price": 19.06,
-    "discount_percent": 95,
-    "currency": "USD"
-  },
-  "coupons": ["$2.00 off on $18.00"],
+  "id": "1005009756429593",
+  "title": "A-Z Initial Necklace 18K Gold Plated Necklace Cute Letter Stainless Steel Necklace for Women",
+  "link": "https://www.aliexpress.com/item/1005009756429593.html",
+  "rating": 4.6,
+  "reviews_count": 2165,
+  "orders_count": 10000,
+  "wishlist_count": 3628,
+  "stock": 1004,
+  "pricing": {"sale_price": 1.09, "original_price": 4.37, "discount_percent": 75, "currency": "USD"},
+  "video": "https://video.aliexpress-media.com/play/u/ae_sg_item/3000923856025/p/1/e/6/t/10301/5000284426458.mp4",
+  "sku_properties": [{ "name": "Metal Color", "values": [{"id": 361180, "name": "A"}, {"id": 17053024, "name": "C"}, {"id": 201447815, "name": "B"}, "…"] }],
   "skus": [
-    {
-      "id": "12000055944024788",
-      "label": "15pc",
-      "is_available": true,
-      "stock": 158,
-      "pricing": { "sale_price": 0.99, "original_price": 19.06, "discount_percent": 95, "currency": "USD" }
-    },
-    {
-      "id": "12000055944024790",
-      "label": "30pcs",
-      "is_available": true,
-      "stock": 127,
-      "pricing": { "sale_price": 7.12, "original_price": 33.94, "discount_percent": 79, "currency": "USD" }
-    }
+    { "id": "12000050070190057", "label": "D", "is_available": true, "stock": 57, "pricing": {"sale_price": 1.09, "original_price": 4.3, "discount_percent": 74, "currency": "USD"} },
+    { "id": "12000050070190056", "label": "C", "is_available": true, "stock": 29, "pricing": {"sale_price": 1.09, "original_price": 4.3, "discount_percent": 74, "currency": "USD"} }
   ],
   "shipping": {
     "ship_to": "US",
     "options": [
-      {
-        "name": "AE_US_SAVER",
-        "is_free": true,
-        "ship_from": "United States",
-        "min_delivery_days": 3,
-        "max_delivery_days": 9,
-        "estimated_delivery_max_date": "2026-08-11",
-        "has_tracking": true
-      }
+      { "name": "AliExpress Selection Standard Shipping", "price": 1.99, "currency": "USD", "ship_from": "China", "min_delivery_days": 6, "max_delivery_days": 10, "has_tracking": true }
     ]
   },
-  "store": {
-    "id": 1105246100,
-    "name": "Shop1105233629 Store",
-    "link": "https://www.aliexpress.com/store/1105246100",
-    "country": "China",
-    "followers_count": 61
-  }
+  "store": { "name": "MECYLIFE Store", "positive_rate_percent": 93.7, "is_top_rated": false }
 }
-```
+````
 
-*Trimmed for readability — the full response also has all product images, video, every SKU variant with its own price and stock, `sku_properties`, specifications, coupons, category path, per-option shipping estimates, full store stats, and the description links. See the [sample response](#product-details) in the API reference.*
+*Trimmed for readability — the full response also has all images, every SKU variant with its own price and stock, the full `sku_properties`, specifications, category, per-option shipping estimates with dates, and the store. See the [sample response](#product-details) in the API reference.*
 
 Add `country_code` to localize the product to any of 64 countries — prices come back in that country's currency automatically.
 
@@ -160,43 +129,53 @@ Real-time AliExpress product search with sorting and filters. Returns 60 product
 
 ```json
 {
-  "count": 12017,
+  "count": 932,
   "per_page": 60,
-  "current_page": 1,
-  "total_pages": 201,
-  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/search?query=rubber+duck&page=2",
-  "previous": null,
-  "currency": "USD",
+  "current_page": 2,
+  "total_pages": 16,
+  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/v2/search?query=wireless%2520earbuds&page=3&sort_by=price_low_to_high&country_code=DE",
+  "previous": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/v2/search?query=wireless%2520earbuds&sort_by=price_low_to_high&country_code=DE",
+  "currency": "EUR",
   "results": [
     {
-      "id": "3256810554614749",
-      "title": "Joyfy Rubber Ducks Random Assortment Mini Rubber Duckie Toys for Kids Bath Shower Toys Birthday Gifts Summer Beach Pool Activity",
-      "link": "https://www.aliexpress.us/item/3256810554614749.html",
-      "image": "https://ae-pic-a1.aliexpress-media.com/kf/Sf1ea8500f8bb4e37b31702f533e083a8v.jpg",
+      "id": "1005013054478555",
+      "title": "F26E01 Wireless Bluetooth In-Ear Earbuds: Clear Sound, Built-In Mic, Premium Materials, Long Battery Life - Ideal for Travel, Office, and Gaming",
+      "link": "https://www.aliexpress.us/item/1005013054478555.html",
+      "image": "https://ae-pic-a1.aliexpress-media.com/kf/Sd009f21dc43f40d6a370aedd0693f969l.jpg",
       "images": [
-        "https://ae-pic-a1.aliexpress-media.com/kf/Sf1ea8500f8bb4e37b31702f533e083a8v.jpg",
-        "https://ae-pic-a1.aliexpress-media.com/kf/S3f715f2a467142728261a755015531703.jpg"
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sd009f21dc43f40d6a370aedd0693f969l.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sb047726f813846eaaa2cbae42e804272u.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sc721a461275c4a20aeb667004b7393acx.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Sa3012150e30e4e29838942c1170bae6bV.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S8b9c3d0f88e644b4bcb255c720aec4033.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S517b931e269c495fb704bf6abc4b52b9v.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S2f04582a156b434182ba0e49e97b6ec1W.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/S8c716e4468644c088df453af67976fb1z.jpg"
       ],
-      "rating": 4.9,
-      "orders_count": 474,
-      "is_hot_sale": false,
+      "rating": 4.0,
+      "orders_count": 6,
+      "is_hot_sale": null,
       "is_choice": false,
       "pricing": {
-        "sale_price": 0.99,
-        "original_price": 19.06,
-        "discount_percent": 94,
-        "currency": "USD",
-        "tax_rate": 0,
-        "sku_id": "12000055944024788"
+        "sale_price": 15.39,
+        "original_price": null,
+        "discount_percent": 25,
+        "currency": "EUR",
+        "tax_rate": 0.19,
+        "sku_id": "12000060162104149"
       },
-      "tags": ["New shoppers save $18.07", "Extra 2% off with coins"],
-      "store_name": "Shop1105233629 Store",
-      "category_ids": [26, 200389159, 100001766],
-      "listed_date": "2026-01-07"
+      "tags": [],
+      "store_name": null,
+      "category_ids": [
+        44,
+        100000306,
+        63705
+      ],
+      "listed_date": "2026-08-27"
     }
   ]
 }
-```
+````
 
 </details>
 
@@ -207,106 +186,299 @@ Real-time AliExpress product search with sorting and filters. Returns 60 product
 ▶ [Try it live in the Playground →](https://www.omkar.cloud/tools/aliexpress-scraper-api/playground?utm_source=github&utm_medium=cpc&utm_content=endpoint-product)
 
 ```
-GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/product?product=3256810554614749
+GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/product?product=3256809570114841
 ```
 
-Real-time full product details. `product` accepts a product URL or a numeric ID — both the `1005…` (aliexpress.com) and `3256…` (aliexpress.us) ID forms work for any country; conversion is automatic. Returns 404 if the product does not exist.
+Real-time full product details. `product` accepts a product URL or a numeric ID — both the `1005…` and `3256…` ID forms work for any country; conversion is automatic. Returns 404 if the product does not exist.
 
 | Parameter | Required | Default | Description |
 |-----------|----------|---------|-------------|
 | `product` | Yes | — | Product URL or numeric product ID. |
 | `country_code` | No | `US` | Ship-to country — prices (including per-SKU) come back in its currency. |
 
-Returns the product's pricing with discount, every SKU variant with its own stock and pricing, `sku_properties`, images, video, specifications, coupons, category path, rating/reviews/orders/wishlist counts, per-option shipping estimates, and full store info.
+Returns the product's pricing with discount, every SKU variant with its own stock and pricing, `sku_properties`, images, video, specifications, rating/reviews/orders/wishlist counts, per-option shipping estimates, and store info.
 
 <details>
 <summary>Sample Response (click to expand)</summary>
 
 ```json
 {
-  "id": "3256810554614749",
-  "canonical_id": "3256810554614749",
-  "title": "Joyfy Rubber Ducks Random Assortment Mini Rubber Duckie Toys for Kids Bath Shower Toys Birthday Gifts Summer Beach Pool Activity",
-  "link": "https://www.aliexpress.com/item/3256810554614749.html",
+  "id": "1005009756429593",
+  "canonical_id": "1005009756429593",
+  "title": "A-Z Initial Necklace 18K Gold Plated Necklace Cute Letter Stainless Steel Necklace for Women",
+  "link": "https://www.aliexpress.com/item/1005009756429593.html",
   "images": [
-    "https://ae-pic-a1.aliexpress-media.com/kf/Sf1ea8500f8bb4e37b31702f533e083a8v.jpg?has_lang=1&ver=1",
-    "https://ae-pic-a1.aliexpress-media.com/kf/S3f715f2a467142728261a755015531703.jpg"
+    "https://ae-pic-a1.aliexpress-media.com/kf/S9231a1e540d54ab9a0fa34603e6ca4988.jpg?has_lang=1&ver=2",
+    "https://ae-pic-a1.aliexpress-media.com/kf/S41ec8ed3d92b4d3a8e2785e4576b5586O.jpg?has_lang=1&ver=2"
   ],
-  "video": null,
-  "rating": 4.9,
-  "reviews_count": 56,
-  "orders_count": 474,
-  "orders_label": "This seller: 474 sales | Total sales: 474",
-  "wishlist_count": 116,
-  "stock": 492,
+  "video": {
+    "link": "https://video.aliexpress-media.com/play/u/ae_sg_item/3000923856025/p/1/e/6/t/10301/5000284426458.mp4",
+    "thumbnail": "https://ae-pic-a1.aliexpress-media.com/kf/S58260c9ce8c047f1a393f9d5608465eeG.jpg"
+  },
+  "rating": 4.6,
+  "reviews_count": 2165,
+  "orders_count": 10000,
+  "orders_label": "10,000+ sold",
+  "wishlist_count": 3628,
+  "stock": 1004,
   "max_per_buyer": 1,
-  "pricing": { "sale_price": 0.99, "original_price": 19.06, "discount_percent": 95, "currency": "USD" },
-  "coupons": ["$2.00 off on $18.00"],
-  "category": { "id": 100001766, "path": "26/200389159/100001766" },
+  "pricing": {
+    "sale_price": 1.09,
+    "original_price": 4.37,
+    "discount_percent": 75,
+    "currency": "USD"
+  },
+  "coupons": [],
+  "category": {
+    "id": 200000162,
+    "path": null
+  },
   "sku_properties": [
     {
-      "id": 14,
-      "name": "Color",
+      "id": 200001034,
+      "name": "Metal Color",
       "values": [
-        { "id": 29, "name": "15pc", "image": null },
-        { "id": 193, "name": "30pcs", "image": null }
+        {
+          "id": 361180,
+          "name": "A",
+          "image": "https://ae-pic-a1.aliexpress-media.com/kf/S28f3e4546e934ef6bd5b630825300aebo.jpg_640x640.jpg_.webp"
+        },
+        {
+          "id": 17053024,
+          "name": "C",
+          "image": "https://ae-pic-a1.aliexpress-media.com/kf/S32e2ce5c9fc34b928fc4dcb1091b2b23t.jpg_640x640.jpg_.webp"
+        }
       ]
     }
   ],
   "skus": [
     {
-      "id": "12000055944024788",
-      "label": "15pc",
-      "attributes": "200007763:201336106;14:29#15pc",
+      "id": "12000050070190057",
+      "label": "D",
+      "attributes": "200001034:201673808#D;200000639:200661028",
       "is_available": true,
-      "stock": 158,
+      "stock": 57,
       "max_per_buyer": 1,
-      "pricing": { "sale_price": 0.99, "original_price": 19.06, "discount_percent": 95, "currency": "USD" }
+      "pricing": {
+        "sale_price": 1.09,
+        "original_price": 4.3,
+        "discount_percent": 74,
+        "currency": "USD"
+      }
     },
     {
-      "id": "12000055944024790",
-      "label": "30pcs",
-      "attributes": "200007763:201336106;14:193#30pcs",
+      "id": "12000050070190056",
+      "label": "C",
+      "attributes": "200001034:17053024#C;200000639:200661028",
       "is_available": true,
-      "stock": 127,
+      "stock": 29,
       "max_per_buyer": 1,
-      "pricing": { "sale_price": 7.12, "original_price": 33.94, "discount_percent": 79, "currency": "USD" }
+      "pricing": {
+        "sale_price": 1.09,
+        "original_price": 4.3,
+        "discount_percent": 74,
+        "currency": "USD"
+      }
     }
   ],
   "specifications": [
-    { "name": "Material", "value": "Plastic" },
-    { "name": "Brand Name", "value": "Joyfy" },
-    { "name": "Recommend Age", "value": "3-6Y,6-12Y" }
+    {
+      "name": "Certification",
+      "value": "REACH"
+    },
+    {
+      "name": "High-concerned chemical",
+      "value": "none"
+    }
   ],
   "shipping": {
     "ship_to": "US",
     "options": [
       {
-        "code": "AE_US_SAVER",
-        "name": "AE_US_SAVER",
-        "price": null,
+        "code": "CAINIAO_FULFILLMENT_STD",
+        "name": "AliExpress Selection Standard Shipping",
+        "price": 1.99,
         "currency": "USD",
-        "is_free": true,
-        "ship_from": "United States",
-        "min_delivery_days": 3,
-        "max_delivery_days": 9,
-        "estimated_delivery_min_date": "2026-08-05",
-        "estimated_delivery_max_date": "2026-08-11",
+        "is_free": false,
+        "ship_from": "China",
+        "min_delivery_days": 6,
+        "max_delivery_days": 10,
+        "estimated_delivery_min_date": "2026-11-04",
+        "estimated_delivery_max_date": "2026-11-08",
         "has_tracking": true,
+        "guaranteed_delivery_days": 60,
         "is_selected": true
       }
     ]
   },
   "store": {
-    "id": 1105246100,
-    "name": "Shop1105233629 Store",
-    "link": "https://www.aliexpress.com/store/1105246100",
-    "seller_id": 6003897797,
-    "country": "China",
-    "opened_date": "2025-11-24",
+    "id": 1105052644,
+    "name": "MECYLIFE Store",
+    "link": "https://www.aliexpress.com/store/1105052644",
+    "seller_id": 6003240024,
+    "country": null,
+    "province": null,
+    "opened_date": null,
     "is_top_rated": false,
-    "followers_count": 61
-  }
+    "is_local_seller": false,
+    "positive_rate_percent": 93.7,
+    "positive_reviews_count": null,
+    "reviews_count": null,
+    "followers_count": null
+  },
+  "description_link": null,
+  "description_json_link": "https://pdp.aliexpress-media.com/product/description/stdmobile/v2/en_US/desc.json?productId=1005009756429593&key=Sd4adf0814af74c0196408d4d494e4f79M.json&token=4bb7691d8e7fbef4723183b4039b8a4a&sellerId=6003240024"
+}
+````
+
+</details>
+
+---
+
+### Product Reviews
+
+▶ [Try it live in the Playground →](https://www.omkar.cloud/tools/aliexpress-scraper-api/playground?utm_source=github&utm_medium=cpc&utm_content=endpoint-reviews)
+
+```
+GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/reviews?product=1005008320757869
+```
+
+Every customer review of a product, 20 per page with `next`/`previous` links, plus the star breakdown and — on page 1 — the tags buyers picked.
+
+| Parameter | Required | Default | Description |
+|-----------|----------|---------|-------------|
+| `product` | Yes | — | Product URL or numeric product ID. |
+| `page` | No | `1` | Page number, 20 reviews per page. |
+| `filter` | No | `all` | `all`, `image` (with photos), `local` (shopper's country), `additional` (with a follow-up), or a star level `1`–`5`. |
+| `country_code` | No | `US` | Picks the `local` filter's country and the translation language. |
+
+<details>
+<summary>Sample Response (click to expand)</summary>
+
+```json
+{
+  "count": 291,
+  "per_page": 20,
+  "current_page": 1,
+  "total_pages": 15,
+  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/v2/reviews?product=1005008320757869&filter=image&country_code=US&page=2",
+  "previous": null,
+  "statistics": {
+    "average_rating": 4.8,
+    "total_reviews": 1105,
+    "positive_rate_percent": 96.7,
+    "five_star": 979,
+    "four_star": 90,
+    "three_star": 15,
+    "two_star": 7,
+    "one_star": 14,
+    "impressions": [
+      {
+        "text": "cute design",
+        "count": 269,
+        "is_positive": true
+      },
+      {
+        "text": "perfect fit",
+        "count": 75,
+        "is_positive": true
+      },
+      {
+        "text": "nice quality",
+        "count": 54,
+        "is_positive": true
+      }
+    ]
+  },
+  "results": [
+    {
+      "id": "60096731722701860",
+      "rating": 5.0,
+      "author": "0***r",
+      "country": "US",
+      "date": "2026-05-13",
+      "text": "Shipped very fast! And the case is very cute, arrived in mint condition. If you’re looking for something that will protect your phone long term, this is unfortunately not the case because it is made of silicone or a silicone like material as shown in the images but very cute for photo shoots or going out and I still 100% recommend. One small complaint is that it has some fitting issues on the top of my phone and camera. Also this made me realize actually how badly I needed to clean my phone without the case, GUYS CLEAN YOUR DEVICES!! I 100% recommend buying for decorative purposes 🙂",
+      "translated_text": null,
+      "sku": "Color:Pink Compatible-Phone Models:iPhone 11",
+      "images": [
+        "https://ae-pic-a1.aliexpress-media.com/kf/A287caf80f6fb4e07885baf3f0e70b967F.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/A6ab6f10fd45740fc93eab8c5893c6275k.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/A24128d6eea684017b52a8ac5337d24d4a.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/A560965e25ee24287b4b59c17234007eaT.jpg",
+        "https://ae-pic-a1.aliexpress-media.com/kf/Ab81f548425104f0e81917957f60ac4a1S.jpg"
+      ],
+      "thumbnails": [
+        "http://ae-pic-a1.aliexpress-media.com/kf/A287caf80f6fb4e07885baf3f0e70b967F.jpg_220x220.jpg",
+        "http://ae-pic-a1.aliexpress-media.com/kf/A6ab6f10fd45740fc93eab8c5893c6275k.jpg_220x220.jpg",
+        "http://ae-pic-a1.aliexpress-media.com/kf/A24128d6eea684017b52a8ac5337d24d4a.jpg_220x220.jpg",
+        "http://ae-pic-a1.aliexpress-media.com/kf/A560965e25ee24287b4b59c17234007eaT.jpg_220x220.jpg",
+        "http://ae-pic-a1.aliexpress-media.com/kf/Ab81f548425104f0e81917957f60ac4a1S.jpg_220x220.jpg"
+      ],
+      "upvotes": 4,
+      "downvotes": 0,
+      "is_anonymous": false,
+      "additional_feedback": null,
+      "logistics": "AliExpress Selection Standard Shipping"
+    }
+  ]
+}
+```
+
+</details>
+
+---
+
+### Product Questions
+
+▶ [Try it live in the Playground →](https://www.omkar.cloud/tools/aliexpress-scraper-api/playground?utm_source=github&utm_medium=cpc&utm_content=endpoint-questions)
+
+```
+GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/questions?product=3256804853498073
+```
+
+The product's customer Q&A, 20 per page: each question with the asker, date, number of answers and the top answer, with translations.
+
+| Parameter | Required | Default | Description |
+|-----------|----------|---------|-------------|
+| `product` | Yes | — | Product URL or numeric product ID. |
+| `page` | No | `1` | Page number, 20 questions per page. |
+| `country_code` | No | `US` | Translation language of questions and answers. |
+
+<details>
+<summary>Sample Response (click to expand)</summary>
+
+```json
+{
+  "count": 68,
+  "per_page": 20,
+  "current_page": 1,
+  "total_pages": 4,
+  "next": "https://aliexpress-scraper-api.omkar.cloud/aliexpress-scraper/v2/questions?product=3256804853498073&country_code=US&page=2",
+  "previous": null,
+  "total_answers": 31,
+  "results": [
+    {
+      "id": "120000020617248",
+      "question": "does it come with retail packing",
+      "translated_question": null,
+      "language": "en",
+      "asked_date": "2026-10-11",
+      "asker": {
+        "name": "G***n",
+        "country": "CA"
+      },
+      "answers_count": 1,
+      "answer": {
+        "text": "Yes",
+        "translated_text": null,
+        "language": "nl",
+        "date": "2026-10-13",
+        "author": "J***d",
+        "country": "NL",
+        "is_purchaser": true
+      }
+    }
+  ]
 }
 ```
 
@@ -324,10 +496,10 @@ Add `country_code` to any request to localize results and return prices in that 
 
 | Plan | Price | Requests/Month |
 |------|-------|----------------|
-| Free | $0 | 200 |
-| Starter | $16 | 20,000 |
-| Grow | $48 | 100,000 |
-| Scale | $148 | 400,000 |
+| Free | $0 | 100 |
+| Starter | $16 | 3,000 |
+| Grow | $48 | 15,000 |
+| Scale | $148 | 75,000 |
 
 1 API call = 1 request
 
@@ -355,13 +527,17 @@ Yes. Pass `country_code` — 64 ship-to countries are supported (`GB`, `DE`, `FR
 
 Data is scraped from AliExpress in real time. Every API call fetches live data — not cached or stale results. Prices, stock, ratings, and order counts reflect what's on AliExpress right now.
 
+### Can I get a product's reviews and Q&A?
+
+Yes. Product Reviews pages through every review (20 per page) with the rating, text and translation, photos and votes — filter to photo reviews, the shopper's country or one star level — and returns the star breakdown plus the tags buyers picked. Product Questions returns the customer Q&A with the top answer to each question.
+
 ### Will I get blocked or need proxies?
 
 No. We handle the scraping infrastructure — you call a normal REST API and never touch AliExpress directly, so there are no proxies, headless browsers, or CAPTCHAs on your side.
 
 ### Can I pass a product URL instead of an ID?
 
-Yes. Product Details accepts a full item URL or a bare numeric ID, and both the `1005…` (aliexpress.com) and `3256…` (aliexpress.us) ID forms work for any country — conversion is automatic.
+Yes. Product Details, Reviews and Questions accept a full item URL or a bare numeric ID, and both the `1005…` and `3256…` ID forms work for any country — conversion is automatic.
 
 ## More E-commerce & Data Scrapers: Amazon & Google Maps
 

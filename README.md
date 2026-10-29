@@ -28,20 +28,18 @@ It works across **64 ship-to countries** via `country_code` — results are loca
 
 - **Rated Excellent — 4.7 based on 37 reviews** on [Trustpilot](https://www.trustpilot.com/review/omkar.cloud). Our open source work is sponsored by [1000+ devs on GitHub](https://github.com/sponsors/omkarcloud).
 
-[![Try the AliExpress Scraper API in the live playground — free, no signup](https://img.shields.io/badge/%E2%96%B6%20Playground-Run%20a%20live%20request%2C%20free-brightgreen?style=for-the-badge)](https://www.omkar.cloud/tools/aliexpress-scraper-api/playground?utm_source=github&utm_medium=cpc&utm_content=badge)
+[![Try the AliExpress Scraper API free on RapidAPI — 1,000 calls/month](https://img.shields.io/badge/%E2%96%B6%20Try%20it%20on%20RapidAPI-1%2C000%20free%20calls%2Fmonth-brightgreen?style=for-the-badge&logo=rapidapi)](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/pricing)
 
-[![Free Plan: 100 requests per month](https://img.shields.io/badge/Free%20tier-100%20requests%2Fmonth-blue?style=for-the-badge)](#pricing)
+[![Open the RapidAPI playground](https://img.shields.io/badge/Playground-Test%20every%20endpoint%20in%20one%20click-blue?style=for-the-badge)](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/playground/apiendpoint_90ef7686-9aa2-44a6-b9a1-cf6c2ad40b96)
 
-The same scraper is also available on **Apify** and **RapidAPI**:
-
-[![Run on Apify](https://img.shields.io/badge/Run%20on-Apify-blue)](https://apify.com/omkar-cloud/aliexpress-scraper) [![Run on RapidAPI](https://img.shields.io/badge/Run%20on-RapidAPI-blue?logo=rapidapi)](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1)
+The same scraper is also available on **Apify**: [![Run on Apify](https://img.shields.io/badge/Run%20on-Apify-blue)](https://apify.com/omkar-cloud/aliexpress-scraper)
 
 ## Example: AliExpress Product Data in One Request
 
 One request to the product details API — here for a best-selling necklace:
 
 ```
-GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/product?product=3256809570114841
+GET https://aliexpress-scraper-api1.p.rapidapi.com/product?product=3256809570114841
 ```
 
 ```json
@@ -75,22 +73,28 @@ GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/product?product=325
 
 Add `country_code` to localize the product to any of 64 countries — prices come back in that country's currency automatically.
 
-**[Run this exact request in the Playground — no signup, no key →](https://www.omkar.cloud/tools/aliexpress-scraper-api/playground?utm_source=github&utm_medium=cpc&utm_content=example)**
+**[Run this exact request in the RapidAPI playground →](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/playground/apiendpoint_90ef7686-9aa2-44a6-b9a1-cf6c2ad40b96)** — it comes prefilled; click **Test Endpoint** and the live JSON appears in the response pane.
 
-The playground comes prefilled with this request and runs it against the live API in your browser. The JSON it returns is identical to what the API returns.
+## ⚡ Try It in 60s
 
-## Start Getting Data in Minutes
+The API is hosted on RapidAPI, so there is nothing to install and your key is injected for you.
 
-Python and Node.js integration examples are available for every endpoint in the playground, so you can get AliExpress data in minutes instead of days.
+1. [Subscribe to the free plan](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/pricing) — 1,000 calls/month, no credit card.
+2. [Open the playground](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/playground/apiendpoint_90ef7686-9aa2-44a6-b9a1-cf6c2ad40b96). Click **Test Endpoint** to see data.
+3. Change the parameters or pick another endpoint — all 4 have working example values.
+4. Copy the generated snippet (Python, Node.js, cURL, PHP, Java, C# and more) — your key and the host are already filled in.
 
 ```python
 import requests
 
 # Scrape AliExpress product search results, live
 response = requests.get(
-    "https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/search",
+    "https://aliexpress-scraper-api1.p.rapidapi.com/search",
     params={"query": "rubber duck", "sort_by": "most_orders", "country_code": "US"},
-    headers={"API-Key": "YOUR_API_KEY"},
+    headers={
+        "x-rapidapi-key": "YOUR_RAPIDAPI_KEY",
+        "x-rapidapi-host": "aliexpress-scraper-api1.p.rapidapi.com",
+    },
 )
 
 print(response.json())
@@ -98,16 +102,16 @@ print(response.json())
 
 ## API Reference
 
-All endpoints are GET requests against `https://aliexpress-scraper-api.omkar.cloud`, authenticated with the `API-Key` header, returning JSON.
+All endpoints are GET requests against `https://aliexpress-scraper-api1.p.rapidapi.com`, authenticated with your `x-rapidapi-key` header, returning JSON.
 
 Add `country_code` to any request to localize results to one of [64 ship-to countries](#supported-countries) — **prices come back in that country's currency automatically**.
 
 ### Product Search
 
-▶ [Try it live in the Playground →](https://www.omkar.cloud/tools/aliexpress-scraper-api/playground?utm_source=github&utm_medium=cpc&utm_content=endpoint-search)
+▶ [Try it in the RapidAPI playground →](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/playground/apiendpoint_ca71e1f7-cced-4b40-81c0-5cdf1322633b)
 
 ```
-GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/search?query=rubber+duck
+GET https://aliexpress-scraper-api1.p.rapidapi.com/search?query=rubber+duck
 ```
 
 Real-time AliExpress product search with sorting and filters. Returns 60 products per page with `next`/`previous` pagination links.
@@ -184,10 +188,10 @@ Real-time AliExpress product search with sorting and filters. Returns 60 product
 
 ### Product Details
 
-▶ [Try it live in the Playground →](https://www.omkar.cloud/tools/aliexpress-scraper-api/playground?utm_source=github&utm_medium=cpc&utm_content=endpoint-product)
+▶ [Try it in the RapidAPI playground →](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/playground/apiendpoint_90ef7686-9aa2-44a6-b9a1-cf6c2ad40b96)
 
 ```
-GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/product?product=3256809570114841
+GET https://aliexpress-scraper-api1.p.rapidapi.com/product?product=3256809570114841
 ```
 
 Real-time full product details. `product` accepts a product URL or a numeric ID — both the `1005…` and `3256…` ID forms work for any country; conversion is automatic. Returns 404 if the product does not exist.
@@ -338,10 +342,10 @@ Returns the product's pricing with discount, every SKU variant with its own stoc
 
 ### Product Reviews
 
-▶ [Try it live in the Playground →](https://www.omkar.cloud/tools/aliexpress-scraper-api/playground?utm_source=github&utm_medium=cpc&utm_content=endpoint-reviews)
+▶ [Try it in the RapidAPI playground →](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/playground/apiendpoint_c0f39c07-49c1-4a26-ae3a-82911bb1faef)
 
 ```
-GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/reviews?product=1005008320757869
+GET https://aliexpress-scraper-api1.p.rapidapi.com/reviews?product=1005008320757869
 ```
 
 Every customer review of a product, 20 per page with `next`/`previous` links, plus the star breakdown and — on page 1 — the tags buyers picked.
@@ -431,10 +435,10 @@ Every customer review of a product, 20 per page with `next`/`previous` links, pl
 
 ### Product Questions
 
-▶ [Try it live in the Playground →](https://www.omkar.cloud/tools/aliexpress-scraper-api/playground?utm_source=github&utm_medium=cpc&utm_content=endpoint-questions)
+▶ [Try it in the RapidAPI playground →](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/playground/apiendpoint_c8bcb372-9b49-4037-bd77-25ae124ec60d)
 
 ```
-GET https://aliexpress-scraper-api.omkar.cloud/aliexpress/v2/questions?product=3256804853498073
+GET https://aliexpress-scraper-api1.p.rapidapi.com/questions?product=3256804853498073
 ```
 
 The product's customer Q&A, 20 per page: each question with the asker, date, number of answers and the top answer, with translations.
@@ -497,24 +501,24 @@ Add `country_code` to any request to localize results and return prices in that 
 
 | Plan | Price | Requests/Month |
 |------|-------|----------------|
-| Free | $0 | 100 |
-| Starter | $16 | 3,000 |
-| Grow | $48 | 15,000 |
-| Scale | $148 | 75,000 |
+| Basic | $0 | 1,000 |
+| Pro | $16 | 20,000 |
+| Ultra | $48 | 100,000 |
+| Mega | $148 | 400,000 |
 
-1 API call = 1 request
+1 API call = 1 request. One search page, one full product, one page of reviews or one page of questions is a single request.
 
-Free Plan Available — [create your API key →](https://www.omkar.cloud/auth/sign-up?redirect=/api-key&utm_source=github&utm_medium=cpc&utm_content=pricing-signup). No credit card for the free tier.
+Start on the free plan — [subscribe on RapidAPI →](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/pricing). No credit card for the free tier; upgrade only when your volume grows.
 
 ## FAQs
 
-### Can I try the API before signing up?
+### Can I try the API before paying?
 
-Yes. The playground runs live requests in your browser — free, no account, no API key. [Try it in the Playground →](https://www.omkar.cloud/tools/aliexpress-scraper-api/playground?utm_source=github&utm_medium=cpc&utm_content=faq)
+Yes. [Subscribe to the free plan on RapidAPI](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/pricing) — 1,000 calls a month, no credit card — and run any endpoint from the [playground](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1/playground/apiendpoint_90ef7686-9aa2-44a6-b9a1-cf6c2ad40b96). The response pane shows the live JSON instantly, and the free requests are enough to evaluate all four endpoints.
 
 ### How do I search AliExpress products?
 
-Call Product Search (`GET /aliexpress/v2/search?query=rubber+duck`) with a keyword. It returns 60 products per page — id, title, link, images, rating, order count, and pricing with discount — plus a `next` link to walk through every page. Refine with `sort_by`, `min_price`/`max_price`, `free_shipping`, `savings`, `four_star_and_up`, and `choice`.
+Call Product Search (`GET /search?query=rubber+duck`) with a keyword. It returns 60 products per page — id, title, link, images, rating, order count, and pricing with discount — plus a `next` link to walk through every page. Refine with `sort_by`, `min_price`/`max_price`, `free_shipping`, `savings`, `four_star_and_up`, and `choice`.
 
 ### Do I get every SKU variant and its price?
 
@@ -559,10 +563,10 @@ Email: [happy.to.help@omkar.cloud](mailto:happy.to.help@omkar.cloud?subject=AliE
 
 [![Email Us about AliExpress Scraper](https://raw.githubusercontent.com/omkarcloud/assets/master/images/ask-on-email.png)](mailto:happy.to.help@omkar.cloud?subject=AliExpress%20Scraper%20API%20Question)
 
-## Love It? Star It! ⭐
+## Love It? Rate It! ⭐
 
-From one developer to another: If the AliExpress Scraper API saved you time, please [star the repo](https://github.com/omkarcloud/aliexpress-scraper).
+From one developer to another: if the AliExpress Scraper API saved you time, please [rate it on RapidAPI](https://rapidapi.com/OmkarCloud/api/aliexpress-scraper-api1) and [star this repo](https://github.com/omkarcloud/aliexpress-scraper).
 
-Here's why it matters: most developers judge a scraper by its stars before trying it. Your star helps the next developer — someone deciding whether the AliExpress data here is real and reliable — try it with confidence.
+Here's why it matters: most developers judge an API by its rating before subscribing. Your rating helps the next developer — someone deciding whether the AliExpress data here is real and reliable — subscribe with confidence.
 
 It takes only 1 second, and means the world to me.
